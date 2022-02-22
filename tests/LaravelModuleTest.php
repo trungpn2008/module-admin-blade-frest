@@ -1,12 +1,12 @@
 <?php
 
-namespace Nwidart\Modules\Tests;
+namespace Trungpn\Modules\Tests;
 
 use Illuminate\Support\Facades\Event;
 use Modules\Recipe\Providers\DeferredServiceProvider;
 use Modules\Recipe\Providers\RecipeServiceProvider;
-use Nwidart\Modules\Contracts\ActivatorInterface;
-use Nwidart\Modules\Json;
+use Trungpn\Modules\Contracts\ActivatorInterface;
+use Trungpn\Modules\Json;
 
 class ModuleTest extends BaseTestCase
 {
@@ -136,7 +136,7 @@ class ModuleTest extends BaseTestCase
     /** @test */
     public function it_reads_key_from_composer_json_file_via_helper_method()
     {
-        $this->assertEquals('nwidart/recipe', $this->module->getComposerAttr('name'));
+        $this->assertEquals('Trungpn/recipe', $this->module->getComposerAttr('name'));
     }
 
     /** @test */
@@ -244,7 +244,7 @@ class ModuleTest extends BaseTestCase
     }
 }
 
-class TestingModule extends \Nwidart\Modules\Laravel\Module
+class TestingModule extends \Trungpn\Modules\Laravel\Module
 {
     public function registerProviders(): void
     {

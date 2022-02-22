@@ -1,6 +1,6 @@
 <?php
 
-namespace Nwidart\Modules\Exceptions;
+namespace Trungpn\Modules\Exceptions;
 
 class FileAlreadyExistException extends \Exception
 {

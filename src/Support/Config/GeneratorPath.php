@@ -1,6 +1,6 @@
 <?php
 
-namespace Nwidart\Modules\Support\Config;
+namespace Trungpn\Modules\Support\Config;
 
 class GeneratorPath
 {

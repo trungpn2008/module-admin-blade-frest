@@ -1,9 +1,9 @@
 <?php
 
-namespace Nwidart\Modules\Tests;
+namespace Trungpn\Modules\Tests;
 
 use Illuminate\Support\Str;
-use Nwidart\Modules\Support\Stub;
+use Trungpn\Modules\Support\Stub;
 
 class StubTest extends BaseTestCase
 {

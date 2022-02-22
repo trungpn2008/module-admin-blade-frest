@@ -1,10 +1,10 @@
 <?php
 
-namespace Nwidart\Modules\Tests;
+namespace Trungpn\Modules\Tests;
 
 use Illuminate\Support\Facades\Event;
-use Nwidart\Modules\Contracts\ActivatorInterface;
-use Nwidart\Modules\Json;
+use Trungpn\Modules\Contracts\ActivatorInterface;
+use Trungpn\Modules\Json;
 
 class LumenModuleTest extends BaseTestCase
 {
@@ -110,7 +110,7 @@ class LumenModuleTest extends BaseTestCase
     /** @test */
     public function it_reads_key_from_composer_json_file_via_helper_method()
     {
-        $this->assertEquals('nwidart/recipe', $this->module->getComposerAttr('name'));
+        $this->assertEquals('Trungpn/recipe', $this->module->getComposerAttr('name'));
     }
 
     /** @test */
@@ -165,6 +165,6 @@ class LumenModuleTest extends BaseTestCase
     }
 }
 
-class LumenTestingModule extends \Nwidart\Modules\Lumen\Module
+class LumenTestingModule extends \Trungpn\Modules\Lumen\Module
 {
 }

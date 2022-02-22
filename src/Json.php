@@ -1,9 +1,9 @@
 <?php
 
-namespace Nwidart\Modules;
+namespace Trungpn\Modules;
 
 use Illuminate\Filesystem\Filesystem;
-use Nwidart\Modules\Exceptions\InvalidJsonException;
+use Trungpn\Modules\Exceptions\InvalidJsonException;
 
 class Json
 {

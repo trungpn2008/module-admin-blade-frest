@@ -1,8 +1,8 @@
 <?php
 
-namespace Nwidart\Modules\Publishing;
+namespace Trungpn\Modules\Publishing;
 
-use Nwidart\Modules\Support\Config\GenerateConfigReader;
+use Trungpn\Modules\Support\Config\GenerateConfigReader;
 
 class LangPublisher extends Publisher
 {

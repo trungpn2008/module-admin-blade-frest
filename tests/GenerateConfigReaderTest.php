@@ -1,9 +1,9 @@
 <?php
 
-namespace Nwidart\Modules\Tests;
+namespace Trungpn\Modules\Tests;
 
-use Nwidart\Modules\Support\Config\GenerateConfigReader;
-use Nwidart\Modules\Support\Config\GeneratorPath;
+use Trungpn\Modules\Support\Config\GenerateConfigReader;
+use Trungpn\Modules\Support\Config\GeneratorPath;
 
 final class GenerateConfigReaderTest extends BaseTestCase
 {

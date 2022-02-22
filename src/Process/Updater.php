@@ -1,8 +1,8 @@
 <?php
 
-namespace Nwidart\Modules\Process;
+namespace Trungpn\Modules\Process;
 
-use Nwidart\Modules\Module;
+use Trungpn\Modules\Module;
 
 class Updater extends Runner
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Nwidart\Modules;
+namespace Trungpn\Modules;
 
 use Illuminate\Support\ServiceProvider;
-use Nwidart\Modules\Providers\BootstrapServiceProvider;
-use Nwidart\Modules\Providers\ConsoleServiceProvider;
-use Nwidart\Modules\Providers\ContractsServiceProvider;
+use Trungpn\Modules\Providers\BootstrapServiceProvider;
+use Trungpn\Modules\Providers\ConsoleServiceProvider;
+use Trungpn\Modules\Providers\ContractsServiceProvider;
 
 abstract class ModulesServiceProvider extends ServiceProvider
 {

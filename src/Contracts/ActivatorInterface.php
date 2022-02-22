@@ -1,8 +1,8 @@
 <?php
 
-namespace Nwidart\Modules\Contracts;
+namespace Trungpn\Modules\Contracts;
 
-use Nwidart\Modules\Module;
+use Trungpn\Modules\Module;
 
 interface ActivatorInterface
 {

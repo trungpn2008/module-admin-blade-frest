@@ -1,7 +1,7 @@
 <?php
 
-use Nwidart\Modules\Activators\FileActivator;
-use Nwidart\Modules\Commands;
+use Trungpn\Modules\Activators\FileActivator;
+use Trungpn\Modules\Commands;
 
 return [
 
@@ -27,7 +27,7 @@ return [
 
     'stubs' => [
         'enabled' => false,
-        'path' => base_path('vendor/nwidart/laravel-modules/src/Commands/stubs'),
+        'path' => base_path('vendor/Trungpn/module-admin-blade-frest/src/Commands/stubs'),
         'files' => [
             'routes/web' => 'Routes/web.php',
             'routes/api' => 'Routes/api.php',
@@ -213,10 +213,10 @@ return [
     */
 
     'composer' => [
-        'vendor' => 'nwidart',
+        'vendor' => 'Trungpn',
         'author' => [
-            'name' => 'Nicolas Widart',
-            'email' => 'n.widart@gmail.com',
+            'name' => 'Phạm Ngọc Trung',
+            'email' => 'utkeo4@gmail.com',
         ],
         'composer-output' => false,
     ],

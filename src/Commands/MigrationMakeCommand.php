@@ -1,13 +1,13 @@
 <?php
 
-namespace Nwidart\Modules\Commands;
+namespace Trungpn\Modules\Commands;
 
 use Illuminate\Support\Str;
-use Nwidart\Modules\Support\Config\GenerateConfigReader;
-use Nwidart\Modules\Support\Migrations\NameParser;
-use Nwidart\Modules\Support\Migrations\SchemaParser;
-use Nwidart\Modules\Support\Stub;
-use Nwidart\Modules\Traits\ModuleCommandTrait;
+use Trungpn\Modules\Support\Config\GenerateConfigReader;
+use Trungpn\Modules\Support\Migrations\NameParser;
+use Trungpn\Modules\Support\Migrations\SchemaParser;
+use Trungpn\Modules\Support\Stub;
+use Trungpn\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 

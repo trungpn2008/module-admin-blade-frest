@@ -1,9 +1,9 @@
 <?php
 
-namespace Nwidart\Modules\Tests;
+namespace Trungpn\Modules\Tests;
 
-use Nwidart\Modules\Contracts\RepositoryInterface;
-use Nwidart\Modules\Laravel\LaravelFileRepository;
+use Trungpn\Modules\Contracts\RepositoryInterface;
+use Trungpn\Modules\Laravel\LaravelFileRepository;
 
 class ContractsServiceProviderTest extends BaseTestCase
 {

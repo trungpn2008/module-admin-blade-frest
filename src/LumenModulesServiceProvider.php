@@ -1,8 +1,8 @@
 <?php
 
-namespace Nwidart\Modules;
+namespace Trungpn\Modules;
 
-use Nwidart\Modules\Support\Stub;
+use Trungpn\Modules\Support\Stub;
 
 class LumenModulesServiceProvider extends ModulesServiceProvider
 {

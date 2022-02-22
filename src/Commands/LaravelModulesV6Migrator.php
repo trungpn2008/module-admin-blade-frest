@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Nwidart\Modules\Commands;
+namespace Trungpn\Modules\Commands;
 
 use Illuminate\Console\Command;
-use Nwidart\Modules\Contracts\RepositoryInterface;
-use Nwidart\Modules\Module;
+use Trungpn\Modules\Contracts\RepositoryInterface;
+use Trungpn\Modules\Module;
 
 class LaravelModulesV6Migrator extends Command
 {

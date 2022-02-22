@@ -1,12 +1,12 @@
 <?php
 
-namespace Nwidart\Modules\Migrations;
+namespace Trungpn\Modules\Migrations;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
-use Nwidart\Modules\Module;
-use Nwidart\Modules\Support\Config\GenerateConfigReader;
+use Trungpn\Modules\Module;
+use Trungpn\Modules\Support\Config\GenerateConfigReader;
 
 class Migrator
 {

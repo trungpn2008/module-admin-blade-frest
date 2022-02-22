@@ -1,9 +1,9 @@
 <?php
 
-namespace Nwidart\Modules\Process;
+namespace Trungpn\Modules\Process;
 
-use Nwidart\Modules\Contracts\RepositoryInterface;
-use Nwidart\Modules\Contracts\RunableInterface;
+use Trungpn\Modules\Contracts\RepositoryInterface;
+use Trungpn\Modules\Contracts\RunableInterface;
 
 class Runner implements RunableInterface
 {

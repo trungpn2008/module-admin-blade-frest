@@ -1,8 +1,8 @@
 <?php
 
-namespace Nwidart\Modules\Publishing;
+namespace Trungpn\Modules\Publishing;
 
-use Nwidart\Modules\Migrations\Migrator;
+use Trungpn\Modules\Migrations\Migrator;
 
 class MigrationPublisher extends AssetPublisher
 {

@@ -1,10 +1,10 @@
 <?php return '{
-    "name": "nwidart/blog",
+    "name": "Trungpn/blog",
     "description": "",
     "authors": [
         {
-            "name": "Nicolas Widart",
-            "email": "n.widart@gmail.com"
+            "name": "Phạm Ngọc Trung",
+            "email": "utkeo4@gmail.com"
         }
     ],
     "extra": {

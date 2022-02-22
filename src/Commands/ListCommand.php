@@ -1,9 +1,9 @@
 <?php
 
-namespace Nwidart\Modules\Commands;
+namespace Trungpn\Modules\Commands;
 
 use Illuminate\Console\Command;
-use Nwidart\Modules\Module;
+use Trungpn\Modules\Module;
 use Symfony\Component\Console\Input\InputOption;
 
 class ListCommand extends Command

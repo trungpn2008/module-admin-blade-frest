@@ -1,9 +1,9 @@
 <?php
 
-namespace Nwidart\Modules\Tests;
+namespace Trungpn\Modules\Tests;
 
-use Nwidart\Modules\Exceptions\InvalidJsonException;
-use Nwidart\Modules\Json;
+use Trungpn\Modules\Exceptions\InvalidJsonException;
+use Trungpn\Modules\Json;
 
 class JsonTest extends BaseTestCase
 {

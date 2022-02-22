@@ -1,8 +1,8 @@
 <?php
 
-namespace Nwidart\Modules\Tests;
+namespace Trungpn\Modules\Tests;
 
-use Nwidart\Modules\Facades\Module;
+use Trungpn\Modules\Facades\Module;
 
 class ModuleFacadeTest extends BaseTestCase
 {

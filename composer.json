@@ -1,19 +1,19 @@
 {
-  "name": "nwidart/laravel-modules",
-  "description": "Laravel Module management",
+  "name": "trungpn/module-admin-blade-frest",
+  "description": "Laravel Module blade frest management",
   "keywords": [
     "modules",
     "laravel",
-    "nwidart",
+    "trunpn",
     "module",
     "rad"
   ],
   "license": "MIT",
   "authors": [
     {
-      "name": "Nicolas Widart",
-      "email": "n.widart@gmail.com",
-      "homepage": "https://nicolaswidart.com",
+      "name": "Phạm Ngọc Trung",
+      "email": "utkeo4@gmail.com",
+      "homepage": "",
       "role": "Developer"
     }
   ],
@@ -32,7 +32,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Nwidart\\Modules\\": "src"
+      "Trungpn\\Modules\\": "src"
     },
     "files": [
       "src/helpers.php"
@@ -40,17 +40,17 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Nwidart\\Modules\\Tests\\": "tests",
+      "Trungpn\\Modules\\Tests\\": "tests",
       "Modules\\Recipe\\": "tests/stubs/valid/Recipe"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Nwidart\\Modules\\LaravelModulesServiceProvider"
+        "Trungpn\\Modules\\LaravelModulesServiceProvider"
       ],
       "aliases": {
-        "Module": "Nwidart\\Modules\\Facades\\Module"
+        "Module": "Trungpn\\Modules\\Facades\\Module"
       }
     },
     "branch-alias": {

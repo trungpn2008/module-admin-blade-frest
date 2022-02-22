@@ -1,6 +1,6 @@
 <?php
 
-namespace Nwidart\Modules\Support\Migrations;
+namespace Trungpn\Modules\Support\Migrations;
 
 class NameParser
 {
