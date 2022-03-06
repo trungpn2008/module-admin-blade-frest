@@ -92,6 +92,7 @@ class ModelMakeCommand extends GeneratorCommand
             ['fillable', null, InputOption::VALUE_OPTIONAL, 'The fillable attributes.', null],
             ['migration', 'm', InputOption::VALUE_NONE, 'Flag to create associated migrations', null],
             ['controller', 'c', InputOption::VALUE_NONE, 'Flag to create associated controllers', null],
+            ['table', 't', InputOption::VALUE_NONE, 'add table', null],
         ];
     }
 
@@ -128,7 +129,7 @@ class ModelMakeCommand extends GeneratorCommand
     {
         $module = $this->laravel['modules']->findOrFail($this->getModuleName());
 
-        return (new Stub('/model.stub', [
+        return (new Stub($this->getStubName(), [
             'NAME'              => $this->getModelName(),
             'FILLABLE'          => $this->getFillable(),
             'NAMESPACE'         => $this->getClassNamespace($module),
@@ -186,5 +187,16 @@ class ModelMakeCommand extends GeneratorCommand
         $module = $this->laravel['modules'];
 
         return $module->config('paths.generator.model.namespace') ?: $module->config('paths.generator.model.path', 'Entities');
+    }
+
+    protected function getStubName()
+    {
+        if ($this->option('table') === true) {
+            $stub = '/modeltable.stub';
+        }  else {
+            $stub = '/model.stub';
+        }
+
+        return $stub;
     }
 }

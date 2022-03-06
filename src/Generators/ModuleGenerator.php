@@ -21,6 +21,13 @@ class ModuleGenerator extends Generator
     protected $name;
 
     /**
+     * The module table will combine.
+     *
+     * @var string
+     */
+    protected $table;
+
+    /**
      * The laravel config instance.
      *
      * @var Config
@@ -85,7 +92,7 @@ class ModuleGenerator extends Generator
      * @param Console    $console
      */
     public function __construct(
-        $name,
+        $name,$table = null,
         FileRepository $module = null,
         Config $config = null,
         Filesystem $filesystem = null,
@@ -93,6 +100,7 @@ class ModuleGenerator extends Generator
         ActivatorInterface $activator = null
     ) {
         $this->name = $name;
+        $this->table = $table;
         $this->config = $config;
         $this->filesystem = $filesystem;
         $this->console = $console;
@@ -136,6 +144,16 @@ class ModuleGenerator extends Generator
     public function getName()
     {
         return Str::studly($this->name);
+    }
+
+    /**
+     * Get the name of module will created. By default in studly case.
+     *
+     * @return string
+     */
+    public function getTable()
+    {
+        return Str::studly($this->table);
     }
 
     /**
@@ -267,6 +285,15 @@ class ModuleGenerator extends Generator
     {
         return $this->module->config('stubs.files');
     }
+    /**
+     * Get the list of files will created.
+     *
+     * @return array
+     */
+    public function getFilesTable()
+    {
+        return $this->module->config('stubs.filesTable');
+    }
 
     /**
      * Set force status.
@@ -288,6 +315,7 @@ class ModuleGenerator extends Generator
     public function generate() : int
     {
         $name = $this->getName();
+        $table = $this->getTable();
 
         if ($this->module->has($name)) {
             if ($this->force) {
@@ -355,7 +383,13 @@ class ModuleGenerator extends Generator
      */
     public function generateFiles()
     {
-        foreach ($this->getFiles() as $stub => $file) {
+
+        if($this->getTable() == null){
+            $config_file = $this->getFiles();
+        }else{
+            $config_file = $this->getFilesTable();
+        }
+        foreach ($config_file as $stub => $file) {
             $path = $this->module->getModulePath($this->getName()) . $file;
 
             if (!$this->filesystem->isDirectory($dir = dirname($path))) {
@@ -392,12 +426,30 @@ class ModuleGenerator extends Generator
             ]);
         }
 
-        if (GenerateConfigReader::read('controller')->generate() === true) {
-            $options = $this->type=='api'?['--api'=>true]:[];
-            $this->console->call('module:make-controller', [
-                'controller' => $this->getName() . 'Controller',
-                'module' => $this->getName(),
-            ]+$options);
+        if($this->getTable() != null){
+            if (GenerateConfigReader::read('controller')->generate() === true) {
+                $options = ['--table'=>true];
+                $this->console->call('module:make-controller', [
+                        'controller' => $this->getName() . 'Controller',
+                        'module' => $this->getName(),
+                        'table' => $this->getTable(),
+                    ]+$options);
+            }
+            if (GenerateConfigReader::read('model')->generate() === true) {
+                $options = ['--table'=>true];
+                $this->console->call('module:make-model', [
+                        'model' => $this->getTable(),
+                        'module' => $this->getName(),
+                    ]+$options);
+            }
+        }else{
+            if (GenerateConfigReader::read('controller')->generate() === true) {
+                $options = $this->type=='api'?['--api'=>true]:[];
+                $this->console->call('module:make-controller', [
+                        'controller' => $this->getName() . 'Controller',
+                        'module' => $this->getName(),
+                    ]+$options);
+            }
         }
     }
 
@@ -513,6 +565,15 @@ class ModuleGenerator extends Generator
     protected function getStudlyNameReplacement()
     {
         return $this->getName();
+    }
+    /**
+     * Get the module table in studly case.
+     *
+     * @return string
+     */
+    protected function getTableNameReplacement()
+    {
+        return $this->getTable();
     }
 
     /**

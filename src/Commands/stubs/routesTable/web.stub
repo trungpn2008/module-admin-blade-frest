@@ -1,0 +1,27 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::prefix('$LOWER_NAME$')->group(function() {
+    Route::get('/', '$STUDLY_NAME$Controller@index');
+});
+Route::prefix('admin')->name('admin.')->middleware('auth:admin')->group(function() {
+    Route::prefix('$LOWER_NAME$')->name('$LOWER_NAME$.')->group(function() {
+        Route::get('/', '$STUDLY_NAME$Controller@index')->name('index');
+        Route::get('/add', '$STUDLY_NAME$Controller@create')->name('add');
+        Route::post('/add', '$STUDLY_NAME$Controller@store');
+        Route::get('/edit/{id?}', '$STUDLY_NAME$Controller@edit')->name('edit');
+        Route::post('/edit/{id?}', '$STUDLY_NAME$Controller@update');
+        Route::get('/show/{id?}', '$STUDLY_NAME$Controller@show')->name('show');
+        Route::get('/delete/{id?}', '$STUDLY_NAME$Controller@destroy')->name('delete');
+    });
+});

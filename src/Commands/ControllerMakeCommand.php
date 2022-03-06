@@ -62,6 +62,7 @@ class ControllerMakeCommand extends GeneratorCommand
             'CLASS_NAMESPACE'   => $this->getClassNamespace($module),
             'CLASS'             => $this->getControllerNameWithoutNamespace(),
             'LOWER_NAME'        => $module->getLowerName(),
+            'TABLE_NAME'        => $this->getTableName(),
             'MODULE'            => $this->getModuleName(),
             'NAME'              => $this->getModuleName(),
             'STUDLY_NAME'       => $module->getStudlyName(),
@@ -79,6 +80,8 @@ class ControllerMakeCommand extends GeneratorCommand
         return [
             ['controller', InputArgument::REQUIRED, 'The name of the controller class.'],
             ['module', InputArgument::OPTIONAL, 'The name of module will be used.'],
+            ['table', InputArgument::OPTIONAL, 'The name of module will be used.'],
+
         ];
     }
 
@@ -90,6 +93,7 @@ class ControllerMakeCommand extends GeneratorCommand
         return [
             ['plain', 'p', InputOption::VALUE_NONE, 'Generate a plain controller', null],
             ['api', null, InputOption::VALUE_NONE, 'Exclude the create and edit methods from the controller.'],
+            ['table', null, InputOption::VALUE_NONE, 'Exclude the create and edit methods from the controller.'],
         ];
     }
 
@@ -105,6 +109,19 @@ class ControllerMakeCommand extends GeneratorCommand
         }
 
         return $controller;
+    }
+    /**
+     * @return array|string
+     */
+    protected function getTableName()
+    {
+        $table = Str::studly($this->argument('table'));
+
+        if (Str::contains(strtolower($table), 'table') === false) {
+            $table .= '';
+        }
+
+        return $table;
     }
 
     /**
@@ -132,6 +149,8 @@ class ControllerMakeCommand extends GeneratorCommand
             $stub = '/controller-plain.stub';
         } elseif ($this->option('api') === true) {
             $stub = '/controller-api.stub';
+        } elseif ($this->option('table') === true) {
+            $stub = '/controller-table.stub';
         } else {
             $stub = '/controller.stub';
         }
