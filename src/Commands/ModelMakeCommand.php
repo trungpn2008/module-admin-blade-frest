@@ -131,6 +131,7 @@ class ModelMakeCommand extends GeneratorCommand
 
         return (new Stub($this->getStubName(), [
             'NAME'              => $this->getModelName(),
+            'TABLE_NAME'        => strtolower($this->getModelName()),
             'FILLABLE'          => $this->getFillable(),
             'NAMESPACE'         => $this->getClassNamespace($module),
             'CLASS'             => $this->getClass(),

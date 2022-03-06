@@ -10,5 +10,5 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class $CLASS$ extends BaseModel
 {
     use HasFactory,SoftDeletes;
-    protected $table = '$LOWER_NAME$';
+    protected $table = '$TABLE_NAME$';
 }
