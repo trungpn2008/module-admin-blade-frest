@@ -4,9 +4,10 @@ namespace $CLASS_NAMESPACE$;
 
 use App\Data\Operator;
 use App\Models\HistoryActivity;
+use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+//use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;

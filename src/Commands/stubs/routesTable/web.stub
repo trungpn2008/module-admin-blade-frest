@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,9 +11,9 @@
 |
 */
 
-Route::prefix('$LOWER_NAME$')->group(function() {
+/*Route::prefix('$LOWER_NAME$')->group(function() {
     Route::get('/', '$STUDLY_NAME$Controller@index');
-});
+});*/
 Route::prefix('admin')->name('admin.')->middleware('auth:admin')->group(function() {
     Route::prefix('$LOWER_NAME$')->name('$LOWER_NAME$.')->group(function() {
         Route::get('/', '$STUDLY_NAME$Controller@index')->name('index');

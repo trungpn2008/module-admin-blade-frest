@@ -104,4 +104,8 @@
         </div>
     </div>
 @endsection
-
+@section('javascript')
+    <script>
+        sidebarMenu('$STUDLY_NAME$', 'index');
+    </script>
+@endsection

@@ -179,7 +179,7 @@
                 }
             } );
         }
-
+        sidebarMenu('$STUDLY_NAME$', 'add');
     </script>
 @endsection
 @include('ckfinder::setup')
