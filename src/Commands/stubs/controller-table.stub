@@ -71,7 +71,7 @@ class $CLASS$ extends Controller
             $data['created_at'] = $data['updated_at'] =now();
             $$LOWER_NAME$ = $this->$LOWER_NAME$s->insertData($data);
             if($$LOWER_NAME$){
-                $this->history_activity->addHistory('Thêm bài viết thành công','$STUDLY_NAME$','Add','Tài khoản '.Auth::user()->name.' thêm bài viết thành công','Thêm bài viết','Success');
+                $this->history_activity->addHistory('Thêm bài viết thành công','$STUDLY_NAME$','Add','Tài khoản '.Auth::user()->name.' thêm bài viết thành công','Thêm bài viết','Success',$$LOWER_NAME$);
                 return redirect()->route('admin.$LOWER_NAME$.index')->with('success','Thêm bài viết thành công');
             }
             $this->history_activity->addHistory('Thêm bài viết không thành công','$STUDLY_NAME$','Add','Tài khoản '.Auth::user()->name.' thêm bài viết không thành công','Thêm bài viết','Error');
@@ -85,7 +85,7 @@ class $CLASS$ extends Controller
          */
         public function show($id)
         {
-            $this->history_activity->addHistory('Vào xem chi tiết bài viết','$STUDLY_NAME$','Detail','Tài khoản '.Auth::user()->name.' vào xem chi tiết bài viết','Vào xem chi tiết bài viết','Nomal');
+            $this->history_activity->addHistory('Vào xem chi tiết bài viết','$STUDLY_NAME$','Detail','Tài khoản '.Auth::user()->name.' vào xem chi tiết bài viết','Vào xem chi tiết bài viết','Nomal',$id);
             return view('$LOWER_NAME$::show');
         }
 
@@ -97,7 +97,7 @@ class $CLASS$ extends Controller
         public function edit($id)
         {
             $data['$LOWER_NAME$'] = $this->$LOWER_NAME$s->whereOperator(new Operator('id',$id))->builder();
-            $this->history_activity->addHistory('Vào trang sửa bài viết','$STUDLY_NAME$','EditForm','Tài khoản '.Auth::user()->name.' vào trang sửa bài viết','Vào trang sửa bài viết','Nomal');
+            $this->history_activity->addHistory('Vào trang sửa bài viết','$STUDLY_NAME$','EditForm','Tài khoản '.Auth::user()->name.' vào trang sửa bài viết','Vào trang sửa bài viết','Nomal',$id);
             return view('$LOWER_NAME$::edit',$data);
         }
 
@@ -115,7 +115,7 @@ class $CLASS$ extends Controller
             if($id){
                 $$LOWER_NAME$ = $this->$LOWER_NAME$s->updateData($data,$id);
                 if($$LOWER_NAME$){
-                    $this->history_activity->addHistory('Sửa bài viết thành công','$STUDLY_NAME$','Edit','Tài khoản '.Auth::user()->name.' Sửa bài viết thành công','sửa bài viết','Success');
+                    $this->history_activity->addHistory('Sửa bài viết thành công','$STUDLY_NAME$','Edit','Tài khoản '.Auth::user()->name.' Sửa bài viết thành công','sửa bài viết','Success',$id);
                     return redirect()->route('admin.$LOWER_NAME$.index')->with('success','Sửa bài viết thành công');
                 }
                 $this->history_activity->addHistory('Sửa bài viết không thành công','$STUDLY_NAME$','Edit','Tài khoản '.Auth::user()->name.' Sửa bài viết không thành công','sửa bài viết','Error');
@@ -135,7 +135,7 @@ class $CLASS$ extends Controller
             if($id){
                 $$LOWER_NAME$ = $this->$LOWER_NAME$s->del(new Operator('id',$id));
                 if($$LOWER_NAME$){
-                    $this->history_activity->addHistory('Xóa bài viết thành công','$STUDLY_NAME$','Delete','Tài khoản '.Auth::user()->name.' Xóa bài viết thành công','Xóa bài viết','Success');
+                    $this->history_activity->addHistory('Xóa bài viết thành công','$STUDLY_NAME$','Delete','Tài khoản '.Auth::user()->name.' Xóa bài viết thành công','Xóa bài viết','Success',$id);
                     return redirect()->route('admin.$LOWER_NAME$.index')->with('success','Xóa bài viết thành công');
                 }
                 $this->history_activity->addHistory('Xóa bài viết không thành công','$STUDLY_NAME$','Delete','Tài khoản '.Auth::user()->name.' Xóa bài viết không thành công','Xóa bài viết','Error');
